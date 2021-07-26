@@ -14,7 +14,7 @@ module.exports = {
       .setColor(palette[random.int((min = 0), (max = palette.length - 1))])
       .setTitle(noise['title'])
       .setURL(noise['url']);
-    
+
     return message.channel.send(embed);
   },
 };

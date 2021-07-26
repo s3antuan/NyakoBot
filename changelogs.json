@@ -1,6 +1,7 @@
 {
     "logs": [
         {"date": "2021-07-18", "log": "Bot activated."},
-        {"date": "2021-07-19", "log": "Added new commands: `changelogs`, `にゃくざ`."}
+        {"date": "2021-07-19", "log": "Added new commands: `changelogs`, `にゃくざ`."},
+        {"date": "2021-07-26", "log": "Added new commands: `えらい`, `よしよし`."}
     ]
 }

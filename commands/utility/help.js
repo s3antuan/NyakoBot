@@ -18,7 +18,7 @@ module.exports = {
         .setDescription(`\`${prefix}help [command name]\` for specific command.`)
         .addFields(
           { name: 'Info', value: 'info, bot_info, changelogs' },
-          { name: 'Text', value: 'ほよ, にゃんふく, ぽはよ, ぷぇっ, にゃくざ' },
+          { name: 'Text', value: 'えらい, ほよ, にゃくざ, にゃんふく, ぽはよ, ぷぇっ, よしよし' },
           { name: 'Fun', value: 'nyako_noise' },
           { name: 'Utility', value: 'help' },
         );
