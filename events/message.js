@@ -14,7 +14,7 @@ module.exports = {
     if (!command) return;
 
     if (command.args && !args.length) {
-      return message.reply(`you didn't provide any arguments!`);
+      return message.reply({ content: `you didn't provide any arguments!`, allowedMentions: { repliedUser: true}});
     }
 
     // cooldown
@@ -33,7 +33,7 @@ module.exports = {
 
       if (now < expirationTime) {
         const timeLeft = (expirationTime - now) / 1000;
-        return message.reply(`please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`);
+        return message.reply({ content: `please wait ${timeLeft.toFixed(1)} more second(s) before reusing the \`${command.name}\` command.`, allowedMentions: { repliedUser: true}});
       }
     }
 
@@ -45,7 +45,7 @@ module.exports = {
       command.execute(message, args);
     } catch (error) {
       console.error(error);
-      message.reply('there was an error trying to execute that command!');
+      message.reply({ content: 'there was an error trying to execute that command!', allowedMentions: { repliedUser: true}});
     }
   },
 }
