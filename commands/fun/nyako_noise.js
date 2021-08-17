@@ -1,6 +1,5 @@
 const random = require('random');
 const Discord = require('discord.js');
-const { palette } = require('../../config.json');
 const { noises } = require('../../db.json');
 
 module.exports = {
@@ -8,10 +7,10 @@ module.exports = {
   description: 'random twitter link of nyako noises',
   aliases: ['nyakonoise'],
   args: false,
-  execute(message, args) {
+  execute(message, args, config) {
     const noise = noises[random.int((min = 0), (max = noises.length - 1))];
     const embed = new Discord.MessageEmbed()
-      .setColor(palette[random.int((min = 0), (max = palette.length - 1))])
+      .setColor(config.palette[random.int((min = 0), (max = config.palette.length - 1))])
       .setTitle(noise['title'])
       .setURL(noise['url']);
 

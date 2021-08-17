@@ -42,7 +42,7 @@ module.exports = {
 
     // execute
     try {
-      command.execute(message, args);
+      command.execute(message, args, config);
     } catch (error) {
       console.error(error);
       message.reply({ content: 'there was an error trying to execute that command!', allowedMentions: { repliedUser: true}});

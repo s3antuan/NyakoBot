@@ -1,6 +1,5 @@
 const random = require('random');
 const Discord = require('discord.js');
-const { palette } = require('../../config.json');
 const { logs } = require('../../changelogs.json');
 
 module.exports = {
@@ -8,9 +7,9 @@ module.exports = {
   aliases: ['changelog', 'change_log', 'change_logs'],
   description: 'change log of the bot',
   args: false,
-  execute(message, args) {
+  execute(message, args, config) {
     const embed = new Discord.MessageEmbed()
-      .setColor(palette[random.int((min = 0), (max = palette.length - 1))])
+      .setColor(config.palette[random.int((min = 0), (max = config.palette.length - 1))])
       .setTitle('Changelogs');
 
     for (log of logs) {
