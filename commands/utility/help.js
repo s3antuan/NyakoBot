@@ -7,19 +7,19 @@ module.exports = {
   aliases: ['commands'],
   usage: '[command name]',
   cooldown: 5,
-  execute(message, args, configs) {
+  execute(message, args, client) {
     const { commands } = message.client;
 
     if (!args.length) {
       const embed = new Discord.MessageEmbed()
-        .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
+        .setColor(client.configs.palette[random.int((min = 0), (max = client.configs.palette.length - 1))])
         .setTitle('List of commands コマンド一覧')
-        .setDescription(`\`${configs.prefix}help [command name]\` for specific command.`)
+        .setDescription(`\`${client.configs.prefix}help [command name]\` for specific command.`)
         .addFields(
           { name: 'Info', value: 'info, bot_info, changelogs' },
           { name: 'Text', value: 'えらい, ほよ, にゃくざ, にゃんふく, ぽはよ, ぷぇっ, せいそ, よしよし' },
           { name: 'Fun', value: 'nyako_noise' },
-          { name: 'Utility', value: 'help' },
+          { name: 'Utility', value: 'help, tag' },
         );
 
       return message.channel.send(embed);
@@ -33,13 +33,13 @@ module.exports = {
     }
 
     const embed = new Discord.MessageEmbed()
-      .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
+      .setColor(client.configs.palette[random.int((min = 0), (max = client.configs.palette.length - 1))])
       .setTitle(`${command.name}`);
     
     if (command.aliases) embed.addField('Aliases 別名', `${command.aliases.join(' ,')}`);
     if (command.description) embed.addField('Description　説明', `${command.description}`);
     if (command.usage) embed.addField('Usage　使い方', `${command.name} ${command.usage}`);
-    if (command.cooldown) embed.addField('Cooldown　クールダウン', `${command.cooldown || configs.cooldown} second(s)`);
+    if (command.cooldown) embed.addField('Cooldown　クールダウン', `${command.cooldown || client.configs.cooldown} second(s)`);
 
     return message.channel.send(embed);
   },

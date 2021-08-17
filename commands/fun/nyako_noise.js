@@ -7,10 +7,10 @@ module.exports = {
   description: 'random twitter link of nyako noises',
   aliases: ['nyakonoise'],
   args: false,
-  execute(message, args, configs) {
+  execute(message, args, client) {
     const noise = noises[random.int((min = 0), (max = noises.length - 1))];
     const embed = new Discord.MessageEmbed()
-      .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
+      .setColor(client.client.configs.palette[random.int((min = 0), (max = client.client.configs.palette.length - 1))])
       .setTitle(noise['title'])
       .setURL(noise['url']);
 

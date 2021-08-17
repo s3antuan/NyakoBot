@@ -7,9 +7,9 @@ module.exports = {
   aliases: ['changelog', 'change_log', 'change_logs'],
   description: 'change log of the bot',
   args: false,
-  execute(message, args, configs) {
+  execute(message, args, client) {
     const embed = new Discord.MessageEmbed()
-      .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
+      .setColor(client.configs.palette[random.int((min = 0), (max = client.configs.palette.length - 1))])
       .setTitle('Changelogs');
 
     for (log of logs) {

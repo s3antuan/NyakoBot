@@ -16,7 +16,7 @@ for (const file of eventFiles) {
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args, client));
   } else {
-    client.on(event.name, (...args) => event.execute(...args, configs, client));
+    client.on(event.name, (...args) => event.execute(...args, client));
   }
 }
 
@@ -33,6 +33,14 @@ for (const folder of commandFolders) {
     client.commands.set(command.name, command);
   }
 }
+
+// objects
+client.objects = new Discord.Collection();
+const Tags = require('./dbObjects');
+client.objects.set('Tags', Tags);
+
+// configs
+client.configs = configs;
 
 // run
 client.login(token);

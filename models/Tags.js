@@ -4,10 +4,22 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             unique: true,
         },
-        description: DataTypes.TEXT,
-        username: DataTypes.STRING,
-        userid: DataTypes.STRING,
-        guildid: DataTypes.STRING,
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
+        username: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        userid: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        guildid: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         usage: {
             type: DataTypes.INTEGER,
             defaultValue: 0,
