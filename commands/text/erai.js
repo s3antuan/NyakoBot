@@ -2,7 +2,7 @@ module.exports = {
     name: 'えらい',
     aliases: ['erai'],
     usage: '[subject]',
-    execute(message, args, config) {
+    execute(message, args, configs) {
         if (args.length) {
             return message.channel.send(`<@${message.author.id}>さん、${args[0]}頑張っててえらい！`);
         }

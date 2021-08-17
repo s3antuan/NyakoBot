@@ -4,7 +4,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 
 const token = process.env.TOKEN;
-const config = require('./config.json');
+const configs = require('./configs.json');
 
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_messageS] });
 
@@ -16,7 +16,7 @@ for (const file of eventFiles) {
   if (event.once) {
     client.once(event.name, (...args) => event.execute(...args, client));
   } else {
-    client.on(event.name, (...args) => event.execute(...args, config, client));
+    client.on(event.name, (...args) => event.execute(...args, configs, client));
   }
 }
 

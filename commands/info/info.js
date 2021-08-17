@@ -5,9 +5,9 @@ module.exports = {
   name: 'info',
   description: 'info of Nyako',
   args: false,
-  execute(message, args, config) {
+  execute(message, args, configs) {
     const embed = new Discord.MessageEmbed()
-      .setColor(config.palette[random.int((min = 0), (max = config.palette.length - 1))])
+      .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
       .setTitle('招福にゃこ🍻🐾')
       .setURL('https://twitter.com/Nyako_Shofuku')
       .setDescription('はじめまして、宇宙１顔がいい招き猫80歳JKアイドル、招福にゃこです！好きなものは酒と金、よろしくお願いします！')

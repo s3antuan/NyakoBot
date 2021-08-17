@@ -2,10 +2,10 @@ const Discord = require('discord.js');
 
 module.exports = {
   name: 'message',
-  execute(message, config, client) {
-    if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  execute(message, configs, client) {
+    if (!message.content.startsWith(configs.prefix) || message.author.bot) return;
 
-    const args = message.content.slice(config.prefix.length).trim().split(/ +/);
+    const args = message.content.slice(configs.prefix.length).trim().split(/ +/);
     const commandName = args.shift().toLowerCase();
 
     // command
@@ -26,7 +26,7 @@ module.exports = {
 
     const now = Date.now();
     const timestamps = cooldowns.get(command.name);
-    const cooldownAmount = (command.cooldown || config.cooldown) * 1000;
+    const cooldownAmount = (command.cooldown || configs.cooldown) * 1000;
 
     if (timestamps.has(message.author.id)) {
       const expirationTime = timestamps.get(message.author.id) + cooldownAmount;
@@ -42,7 +42,7 @@ module.exports = {
 
     // execute
     try {
-      command.execute(message, args, config);
+      command.execute(message, args, configs);
     } catch (error) {
       console.error(error);
       message.reply({ content: 'there was an error trying to execute that command!', allowedMentions: { repliedUser: true}});

@@ -6,9 +6,9 @@ module.exports = {
   aliases: ['botinfo'],
   description: 'info of the bot',
   args: false,
-  execute(message, args, config) {
+  execute(message, args, configs) {
     const embed = new Discord.MessageEmbed()
-      .setColor(config.palette[random.int((min = 0), (max = config.palette.length - 1))])
+      .setColor(configs.palette[random.int((min = 0), (max = configs.palette.length - 1))])
       .setTitle('Bot Info')
       .setDescription('This is a fan-made bot about Shofuku Nyako.')
       .addFields(
