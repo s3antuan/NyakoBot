@@ -15,6 +15,6 @@ module.exports = {
         { name: 'Author', value: 'ginmokusei#7420'},
       );
     
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };

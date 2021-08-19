@@ -18,6 +18,6 @@ module.exports = {
         { name: 'Fanbox', value: 'https://www.fanbox.cc/@nyako'},
       );
     
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };

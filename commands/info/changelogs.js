@@ -16,6 +16,6 @@ module.exports = {
       embed.addField(log['date'], log['log']);
     }
     
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };

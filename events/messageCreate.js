@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-  name: 'message',
+  name: 'messageCreate',
   execute(message, client) {
     if (!message.content.startsWith(client.configs.prefix) || message.author.bot) return;
 

@@ -6,7 +6,7 @@ const Discord = require('discord.js');
 const token = process.env.TOKEN;
 const configs = require('./configs.json');
 
-const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_messageS] });
+const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 
 // events
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));

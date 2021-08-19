@@ -22,7 +22,7 @@ module.exports = {
           { name: 'Utility', value: 'help, tag' },
         );
 
-      return message.channel.send(embed);
+      return message.channel.send({ embeds: [embed] });
     }
 
     const name = args[0].toLowerCase();
@@ -41,6 +41,6 @@ module.exports = {
     if (command.usage) embed.addField('Usage　使い方', `${command.name} ${command.usage}`);
     if (command.cooldown) embed.addField('Cooldown　クールダウン', `${command.cooldown || client.configs.cooldown} second(s)`);
 
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };
