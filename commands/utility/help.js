@@ -29,7 +29,7 @@ module.exports = {
     const command = commands.get(name) || commands.find(cmd => cmd.aliases && cmd.aliases.includes(name));
 
     if (!command) {
-      return message.reply({ content: 'that\'s not a valid command!', allowedMentions: { repliedUser: true}});
+      return message.reply({ content: 'That\'s not a valid command!', allowedMentions: { repliedUser: true}});
     }
 
     const embed = new Discord.MessageEmbed()
