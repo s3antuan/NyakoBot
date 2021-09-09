@@ -10,7 +10,7 @@ module.exports = {
   execute(message, args, client) {
     const noise = noises[random.int((min = 0), (max = noises.length - 1))];
     const embed = new Discord.MessageEmbed()
-      .setColor(client.client.configs.palette[random.int((min = 0), (max = client.client.configs.palette.length - 1))])
+      .setColor(client.configs.palette[random.int((min = 0), (max = client.configs.palette.length - 1))])
       .setTitle(noise['title'])
       .setURL(noise['url']);
 
