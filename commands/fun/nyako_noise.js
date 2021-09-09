@@ -14,6 +14,6 @@ module.exports = {
       .setTitle(noise['title'])
       .setURL(noise['url']);
 
-    return message.channel.send(embed);
+    return message.channel.send({ embeds: [embed] });
   },
 };
