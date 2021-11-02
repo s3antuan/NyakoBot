@@ -6,6 +6,7 @@
         {"date": "2021-08-01", "log": "Added new commands: `せいそ`."},
         {"date": "2021-08-20", "log": "Update to discord.js v13."},
         {"date": "2021-08-22", "log": "Added new commands: `tag`."},
-        {"date": "2021-09-13", "log": "Added new commands: `baka`."}
+        {"date": "2021-09-13", "log": "Added new commands: `baka`."},
+        {"date": "2021-09-13", "log": "Added new commands: `oppai`."}
     ]
 }

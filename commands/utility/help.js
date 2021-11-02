@@ -18,7 +18,7 @@ module.exports = {
         .addFields(
           { name: 'Info', value: 'info, bot_info, changelogs' },
           { name: 'Text', value: 'えらい, ほよ, にゃくざ, にゃんふく, ぽはよ, ぷぇっ, せいそ, よしよし' },
-          { name: 'Fun', value: 'nyako_noise, baka' },
+          { name: 'Fun', value: 'nyako_noise, baka, oppai' },
           { name: 'Utility', value: 'help, tag' },
         );
 
